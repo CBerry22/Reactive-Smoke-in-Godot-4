@@ -1,0 +1,11 @@
+Model Information:
+* title:	SciFi Gun
+* source:	https://sketchfab.com/3d-models/scifi-gun-04a9f3ccb5b14dc38a28b27c1916e18e
+* author:	Feche Pedroza (https://sketchfab.com/mrfetch)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SciFi Gun" (https://sketchfab.com/3d-models/scifi-gun-04a9f3ccb5b14dc38a28b27c1916e18e) by Feche Pedroza (https://sketchfab.com/mrfetch) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

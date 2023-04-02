@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://byqm2u76lhqpg"]
+
+[ext_resource type="Script" path="res://smoke/smoke.gd" id="1_ico6p"]
+[ext_resource type="Script" path="res://smoke/bullet_wake.gd" id="1_itl02"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_dksgn"]
+density = -8.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w23or"]
+resource_local_to_scene = true
+top_radius = 0.2
+bottom_radius = 0.2
+
+[node name="BulletWake" type="Node3D"]
+top_level = true
+script = ExtResource("1_itl02")
+
+[node name="BulletWakeVolume" type="FogVolume" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.5, 0, 0.5)
+shape = 2
+material = SubResource("FogMaterial_dksgn")
+script = ExtResource("1_ico6p")
+smoke_density = -8.0
+spawn_time = 0.1
+sustain_time = 0.0
+fade_time = 2.0
+
+[node name="Debug" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+visible = false
+layers = 32
+mesh = SubResource("CylinderMesh_w23or")

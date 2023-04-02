@@ -1,0 +1,331 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 2625,
+      "max": [
+        3.373729944229126,
+        0.6050599813461304,
+        2.3106400966644287
+      ],
+      "min": [
+        -3.454390048980713,
+        -0.6050599813461304,
+        -2.5624399185180664
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 31500,
+      "componentType": 5126,
+      "count": 2625,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 2625,
+      "max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2625,
+      "max": [
+        0.9906899929046631,
+        0.9910399913787842
+      ],
+      "min": [
+        0.008910000324249268,
+        0.010379999876022339
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 21000,
+      "componentType": 5126,
+      "count": 2625,
+      "max": [
+        0.9906899929046631,
+        0.9910399913787842
+      ],
+      "min": [
+        0.008910000324249268,
+        0.010379999876022339
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 42000,
+      "componentType": 5126,
+      "count": 2625,
+      "max": [
+        0.9906899929046631,
+        0.9910399913787842
+      ],
+      "min": [
+        0.008910000324249268,
+        0.010379999876022339
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 5700,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Feche Pedroza (https://sketchfab.com/mrfetch)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/scifi-gun-04a9f3ccb5b14dc38a28b27c1916e18e",
+      "title": "SciFi Gun"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 22800,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 63000,
+      "byteOffset": 22800,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 63000,
+      "byteOffset": 85800,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 42000,
+      "byteOffset": 148800,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 190800,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/ChumboScyFi_baseColor.png"
+    },
+    {
+      "uri": "textures/ChumboScyFi_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/ChumboScyFi_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "name": "ChumboScyFi",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.68,
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.47
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "BaseMesh",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        4,
+        6
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "BaseMesh"
+    },
+    {
+      "mesh": 0,
+      "name": "BaseMesh"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        0.8736400000000002,
+        0.48658000000000007,
+        0.0,
+        0.0,
+        -0.39421000000000006,
+        0.70781,
+        -0.58618,
+        0.0,
+        -0.28522000000000003,
+        0.51211,
+        0.81018,
+        0.0,
+        -5.0184299999999995,
+        8.225219999999998,
+        9.52464,
+        1.0
+      ],
+      "name": "Hemi"
+    },
+    {
+      "name": "Hemi"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        0.91837,
+        0.39571000000000006,
+        -0.0,
+        0.0,
+        0.23307,
+        -0.5409200000000001,
+        0.8081400000000001,
+        0.0,
+        0.31979,
+        -0.7421700000000001,
+        -0.5889900000000001,
+        0.0,
+        3.67875,
+        -9.37757,
+        -5.2217400000000005,
+        1.0
+      ],
+      "name": "Hemi.001"
+    },
+    {
+      "name": "Hemi.001"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

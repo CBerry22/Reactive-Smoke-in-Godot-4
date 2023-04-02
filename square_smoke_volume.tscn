@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://buffxca606k7c"]
+
+[ext_resource type="CompressedTexture3D" uid="uid://bimhfb6i8cx5p" path="res://3d_noise.png" id="1_32uvp"]
+[ext_resource type="Shader" path="res://square_smoke_volume.gdshader" id="1_y2gh1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx4jm"]
+shader = ExtResource("1_y2gh1")
+shader_parameter/density = 5.9406
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/height_falloff = 0.0
+shader_parameter/edge_fade = 0.1
+shader_parameter/density_texture = ExtResource("1_32uvp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1stf"]
+
+[node name="SquareSmokeVolume" type="FogVolume"]
+layers = 2
+shape = 0
+material = SubResource("ShaderMaterial_gx4jm")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_y1stf")

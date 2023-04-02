@@ -1,0 +1,11 @@
+Model Information:
+* title:	Grenade
+* source:	https://sketchfab.com/3d-models/grenade-b0f9d3b8a15d4204b56a60395812f524
+* author:	lexanime (https://sketchfab.com/lexanime)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Grenade" (https://sketchfab.com/3d-models/grenade-b0f9d3b8a15d4204b56a60395812f524) by lexanime (https://sketchfab.com/lexanime) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

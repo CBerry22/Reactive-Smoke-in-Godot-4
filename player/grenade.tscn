@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://chs5xb5fhxu40"]
+
+[ext_resource type="PackedScene" uid="uid://dkv1djl4j80fy" path="res://player/grenade_model/scene.gltf" id="1_628tk"]
+[ext_resource type="Script" path="res://player/grenade.gd" id="1_xs6c8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmepk"]
+radius = 0.071474
+height = 0.318649
+
+[node name="Grenade" type="RigidBody3D"]
+top_level = true
+collision_layer = 8
+script = ExtResource("1_xs6c8")
+
+[node name="Model" parent="." instance=ExtResource("1_628tk")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.134707, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gmepk")
+
+[node name="ExplodeTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ExplodeTimer" to="." method="_on_explode_timer_timeout"]

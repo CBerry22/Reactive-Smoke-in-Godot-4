@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://lm15i55br22c"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_7xj2d"]
+edge_fade = 1.03526e-05
+
+[node name="Node3D" type="Node3D"]
+
+[node name="FogVolume" type="FogVolume" parent="."]
+size = Vector3(4, 4, 4)
+shape = 0
+material = SubResource("FogMaterial_7xj2d")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02668, 0.280223, 1.33389)
+light_volumetric_fog_energy = 4.497
+omni_range = 4.03912

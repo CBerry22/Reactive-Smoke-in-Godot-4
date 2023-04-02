@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5n6ef522inme"]
+
+[ext_resource type="PackedScene" uid="uid://dur8ekku6na3n" path="res://player/grenade.tscn" id="1_n32sk"]
+[ext_resource type="PackedScene" uid="uid://drb04cg33bojr" path="res://smoke/simple_smoke.tscn" id="2_xapf1"]
+
+[node name="SmokeGrenade" instance=ExtResource("1_n32sk")]
+smoke_volume = ExtResource("2_xapf1")

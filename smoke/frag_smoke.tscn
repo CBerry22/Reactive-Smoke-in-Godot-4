@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://bndrby354qu8h"]
+
+[ext_resource type="Texture2D" uid="uid://cbykip881wj2v" path="res://textures/particles/PNG (Transparent)/muzzle_05.png" id="2_lsmw2"]
+[ext_resource type="Script" path="res://smoke/smoke.gd" id="3_gaj2m"]
+[ext_resource type="Script" path="res://emit_on_ready.gd" id="3_o8ert"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_onlua"]
+density = -8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4br12"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_lsmw2")
+uv1_scale = Vector3(1, -1, 1)
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="Gradient" id="Gradient_xbxff"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k24ti"]
+gradient = SubResource("Gradient_xbxff")
+
+[sub_resource type="Curve" id="Curve_qouvc"]
+_data = [Vector2(0, 1), 0.0, -1.41217e-07, 0, 0, Vector2(1, 0), -2.35455, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uknej"]
+curve = SubResource("Curve_qouvc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4wg8"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_uknej")
+color_ramp = SubResource("GradientTexture1D_k24ti")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vw8to"]
+size = Vector2(0.05, 0.05)
+
+[node name="Smoke" type="Node3D"]
+top_level = true
+
+[node name="SmokeVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13741, 0)
+layers = 32
+size = Vector3(10, 6, 10)
+shape = 0
+material = SubResource("FogMaterial_onlua")
+script = ExtResource("3_gaj2m")
+smoke_density = -8.0
+spawn_time = 0.1
+sustain_time = 0.0
+fade_time = 2.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_4br12")
+emitting = false
+amount = 128
+one_shot = true
+explosiveness = 1.0
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_g4wg8")
+draw_pass_1 = SubResource("QuadMesh_vw8to")
+script = ExtResource("3_o8ert")

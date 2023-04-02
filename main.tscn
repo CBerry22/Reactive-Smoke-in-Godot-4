@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqs6ug15ui5e2"]
+
+[ext_resource type="Material" uid="uid://dj8eh6ig43f10" path="res://materials/wall.tres" id="1_icly2"]
+[ext_resource type="PackedScene" uid="uid://dhykj53v8qfot" path="res://player/player.tscn" id="1_lvicc"]
+[ext_resource type="Script" path="res://VolumeFogGenerator.gd" id="3_205ur"]
+[ext_resource type="PackedScene" uid="uid://buffxca606k7c" path="res://square_smoke_volume.tscn" id="4_adcvx"]
+[ext_resource type="PackedScene" uid="uid://bnxjx2unpv42q" path="res://dummy/scene.gltf" id="5_luroh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibpc3"]
+size = Vector3(14, 7, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00xw7"]
+transparency = 1
+albedo_color = Color(0.823529, 1, 1, 0.321569)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iiy47"]
+material = SubResource("StandardMaterial3D_00xw7")
+size = Vector3(14, 7, 10)
+
+[node name="Main" type="Node3D"]
+
+[node name="Block" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7927, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_ibpc3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("BoxMesh_iiy47")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_ibpc3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.38557, -0.318338, -2.98023e-08, -0.636672, 0.771134, -0.500003, 0.667821, 0.551373, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Level" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Walls" type="CSGBox3D" parent="Level"]
+size = Vector3(50, 10, 50)
+material = ExtResource("1_icly2")
+
+[node name="WallCutout" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+operation = 2
+size = Vector3(45, 10, 45)
+material = ExtResource("1_icly2")
+
+[node name="Player" parent="." instance=ExtResource("1_lvicc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.2923, 0, 0.203299)
+rotation_edit_mode = 0
+
+[node name="VolumeFogGenerator" type="Node3D" parent="."]
+visible = false
+script = ExtResource("3_205ur")
+smoke_volume = ExtResource("4_adcvx")
+
+[node name="Dummy" parent="." instance=ExtResource("5_luroh")]
+transform = Transform3D(-0.15, 0, 1.86265e-08, 0, 0.15, 0, -1.86265e-08, 0, -0.15, 11.9604, 0, 18.4112)
+
+[node name="Dummy2" parent="." instance=ExtResource("5_luroh")]
+transform = Transform3D(-0.15, 0, 1.86265e-08, 0, 0.15, 0, -1.86265e-08, 0, -0.15, 9.26044, 0, 18.4112)
+
+[node name="Dummy3" parent="." instance=ExtResource("5_luroh")]
+transform = Transform3D(-0.15, 0, 1.86265e-08, 0, 0.15, 0, -1.86265e-08, 0, -0.15, 6.71044, 0, 18.4112)
+
+[node name="Dummy4" parent="." instance=ExtResource("5_luroh")]
+transform = Transform3D(-0.15, 0, 1.86265e-08, 0, 0.15, 0, -1.86265e-08, 0, -0.15, 4.31044, 0, 18.4112)
+
+[node name="Dummy5" parent="." instance=ExtResource("5_luroh")]
+transform = Transform3D(-0.15, 0, 1.86265e-08, 0, 0.15, 0, -1.86265e-08, 0, -0.15, 2.06044, 0, 18.4112)

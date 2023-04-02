@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl2mcmke4sstd"]
+
+[ext_resource type="PackedScene" uid="uid://chs5xb5fhxu40" path="res://player/grenade.tscn" id="1_sbak5"]
+[ext_resource type="PackedScene" uid="uid://bndrby354qu8h" path="res://smoke/frag_smoke.tscn" id="2_311s8"]
+
+[node name="FragGrenade" instance=ExtResource("1_sbak5")]
+smoke_volume = ExtResource("2_311s8")
+
+[node name="ExplodeTimer" parent="." index="2"]
+wait_time = 4.0

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b54blioshiafd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_etdoa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gspbi"]
+
+[node name="TestVolume" type="StaticBody3D"]
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_etdoa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gspbi")

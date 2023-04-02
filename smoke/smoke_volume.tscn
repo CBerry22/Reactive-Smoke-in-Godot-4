@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkiaj7frxohei"]
+
+[ext_resource type="Shader" path="res://smoke.gdshader" id="1_lpjv4"]
+[ext_resource type="CompressedTexture3D" uid="uid://bimhfb6i8cx5p" path="res://3d_noise.png" id="2_1q1g5"]
+[ext_resource type="Script" path="res://smoke/smoke.gd" id="3_pmu4v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lta0k"]
+shader = ExtResource("1_lpjv4")
+shader_parameter/density = 8.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/height_falloff = 0.0
+shader_parameter/edge_fade = 0.329
+shader_parameter/density_texture = ExtResource("2_1q1g5")
+
+[node name="SmokeVolume" type="FogVolume"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13741, 0)
+layers = 32
+size = Vector3(10, 6, 10)
+shape = 0
+material = SubResource("ShaderMaterial_lta0k")
+script = ExtResource("3_pmu4v")
+density_path = "shader_parameter/density"

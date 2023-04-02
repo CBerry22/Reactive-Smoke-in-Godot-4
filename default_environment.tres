@@ -1,0 +1,22 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bgbsuxdvr0uf8"]
+
+[ext_resource type="Texture2D" uid="uid://b6w83nokw3oyv" path="res://sky_box/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="1_i0fyg"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_enti1"]
+panorama = ExtResource("1_i0fyg")
+
+[sub_resource type="Sky" id="Sky_qmpqy"]
+sky_material = SubResource("PanoramaSkyMaterial_enti1")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_qmpqy")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
